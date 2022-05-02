@@ -2,21 +2,19 @@ package com.bridgelabz;
 
 public class FlipCoin {
     public static void main(String[] args) {
-        float CoinFlip=10;
-        int TailCount = 0;
-        int HeadCount = 0;
-        for (int i=0; i < CoinFlip; i++) {
-            if (Math.random() < 0.5) {
-                TailCount++;
-                System.out.println("Tails");
-            } else {
-                HeadCount++;
-                System.out.println("Heads");
-            }
+        System.out.println("Enter the number of times coin needs to be flipped: ");
+        int flipNo = Utility.getUserInteger();
+        int heads = 0, tails = 0;
+        double headsPercent=0, tailsPercent=0;
+        for (int i=0; i<flipNo; i++){
+            double randomNo = Utility.getRandomDouble(1);
+            if (randomNo < 0.5)
+                tails++;
+            else
+                heads++;
         }
-        float TailPercentage = ((TailCount/ CoinFlip) * 100);
-        System.out.println("percentage for tail is:" +TailPercentage + "%");
-        float HeadPercentage = ((HeadCount/ CoinFlip) * 100);
-        System.out.println("percentage for head is:" +HeadPercentage + "%");
+        headsPercent = 100*heads/flipNo;
+        tailsPercent = 100*tails/flipNo;
+        System.out.println("No. of heads: "+heads+" No. of tails: "+tails+"\nheads %: "+headsPercent+" tails %: "+tailsPercent);
     }
 }

@@ -1,14 +1,16 @@
 package com.bridgelabz;
 
 public class PowerofTwo {
-    public static void main(String[] args)
-    {
-        int base=2;
-        int n;     //Power Value
-        for (n=1; n<31; n++)
-        {
-            System.out.println("Power of 2^" +n+" is: " + Math.pow(base, n));
+    public static void main(String[] args) {
+        System.out.println("Enter a number from 0 to 30: ");
+        int n = Utility.getUserInteger();
+        if(n>=0 && n<31){
+            for (int i=0; i<=n; i++){
+                System.out.println("2^"+i+" = "+(int)Math.pow(2, i));
+            }
         }
+        else
+            System.out.println("Error! Number should be between 0 and 30");
     }
 
 }

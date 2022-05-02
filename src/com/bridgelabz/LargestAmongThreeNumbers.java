@@ -4,19 +4,11 @@ import java.util.Scanner;
 
 public class LargestAmongThreeNumbers {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter Num1 as 'a':");
-        int a=sc.nextInt();
-        System.out.println("Enter Num2 as 'b':");
-        int b=sc.nextInt();
-        System.out.println("Enter Num3 as 'c':");
-        int c=sc.nextInt();
-
-        if (a>b && a>c)
-            System.out.println(a+" is largest among three numbers");
-        else if (b>c && b>a)
-            System.out.println(b+" is largest among three numbers");
-        else
-            System.out.println(c+" is largest among three numbers");
+        System.out.println("Enter 3 numbers to find largest amongst them: ");
+        int num1 = Utility.getUserInteger();
+        int num2 = Utility.getUserInteger();
+        int num3 = Utility.getUserInteger();
+        int largest = Math.max(Math.max(num1, num2), num3);
+        System.out.println("Largest of "+num1+", "+num2+", "+num3+" is "+largest);
     }
 }
